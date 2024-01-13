@@ -203,6 +203,19 @@ cco:code_license rdf:type owl:AnnotationProperty ;
                  rdfs:label "code license"@en .
 
 
+###  http://www.ontologyrepository.com/CommonCoreOntologies/CodeCompilation
+cco:CodeCompilation rdf:type owl:Class ;
+                    rdfs:subClassOf cco:ComputerProgramExecution ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty cco:has_causal_factor ;
+                                      owl:someValuesFrom cco:CodeCompiler
+                                    ] ;
+                    cco:definition "A Computer Program Execution in which some Information Bearing Entity that uses a Compiled Language is translated into some Information Bearing Entity that uses a Low-Level Programming Language."@en ;
+                    cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/CyberOntology"^^xsd:anyURI ;
+                    rdfs:label "Code Compilation"@en .
+
+
+
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/content_license
 cco:content_license rdf:type owl:AnnotationProperty ;
                     cco:definition "The name and description of the license under which the ideas, concepts and other informational content expressed in the .owl file are released."@en ;
@@ -3314,6 +3327,20 @@ cco:Computer rdf:type owl:Class ;
              rdfs:label "Computer"@en .
 
 
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ComputerProgramExecution
+cco:ComputerProgramExecution rdf:type owl:Class ;
+                             rdfs:subClassOf cco:MechanicalProcess ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty cco:prescribed_by ;
+                                               owl:someValuesFrom cco:Algorithm
+                                             ] ;
+                             cco:alternative_label "Computer Process"@en ;
+                             cco:definition "A Mechanical Process that is comprised of a sequence of simple operations performed by a Central Processing Unit or some Computer Program according to the instructions of some Algorithm."@en ;
+                             cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/CyberOntology"^^xsd:anyURI ;
+                             rdfs:label "Computer Program Execution"@en .
+
+
+
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/ComputingArtifactFunction
 cco:ComputingArtifactFunction rdf:type owl:Class ;
                               rdfs:subClassOf cco:ArtifactFunction ;
@@ -3367,6 +3394,19 @@ cco:DesignativeName rdf:type owl:Class ;
                     cco:definition "A Designative Information Content Entity that consists of a string of characters that designates an entity within a specified cultural or social namespace and which is typically a word or phrase in a natural language that has an accepted cultural or social significance."@en ;
                     cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Mid/InformationEntityOntology"^^xsd:anyURI ;
                     rdfs:label "Designative Name"@en .
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/DigitalFile
+cco:DigitalFile rdf:type owl:Class ;
+                rdfs:subClassOf cco:InformationBearingArtifact ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty obo:RO_0001025 ;
+                                  owl:someValuesFrom cco:DigitalStorageDevice
+                                ] ;
+                cco:definition "An Information Bearing Artifact that consist of a one-dimensional array of bytes on a Digital Storage Device, and which is designed to be easily opened, read, changed, and closed by an Information Processing Artifact."@en ;
+                cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/CyberOntology"^^xsd:anyURI ;
+                rdfs:label "Digital File"@en .
+
+
 
 
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/DigitalStorageDevice
@@ -3580,6 +3620,15 @@ cco:MeasurementInformationContentEntity rdf:type owl:Class ;
                                         cco:definition "A Descriptive Information Content Entity that describes the extent, dimensions, quantity, or quality of an Entity relative to some standard."@en ;
                                         cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Mid/InformationEntityOntology"^^xsd:anyURI ;
                                         rdfs:label "Measurement Information Content Entity"@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/MechanicalProcess
+cco:MechanicalProcess rdf:type owl:Class ;
+                      rdfs:subClassOf obo:BFO_0000015 ;
+                      cco:definition "A Process that is the realization of some Disposition of an Artifact"@en ;
+                      cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Mid/EventOntology"^^xsd:anyURI ;
+                      rdfs:label "Mechanical Process"@en .
+
 
 
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/Message
