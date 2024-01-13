@@ -203,19 +203,6 @@ cco:code_license rdf:type owl:AnnotationProperty ;
                  rdfs:label "code license"@en .
 
 
-###  http://www.ontologyrepository.com/CommonCoreOntologies/CodeCompilation
-cco:CodeCompilation rdf:type owl:Class ;
-                    rdfs:subClassOf cco:ComputerProgramExecution ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty cco:has_causal_factor ;
-                                      owl:someValuesFrom cco:CodeCompiler
-                                    ] ;
-                    cco:definition "A Computer Program Execution in which some Information Bearing Entity that uses a Compiled Language is translated into some Information Bearing Entity that uses a Low-Level Programming Language."@en ;
-                    cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/CyberOntology"^^xsd:anyURI ;
-                    rdfs:label "Code Compilation"@en .
-
-
-
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/content_license
 cco:content_license rdf:type owl:AnnotationProperty ;
                     cco:definition "The name and description of the license under which the ideas, concepts and other informational content expressed in the .owl file are released."@en ;
@@ -1213,6 +1200,10 @@ cco:has_capability rdf:type owl:ObjectProperty ;
                    cco:definition "x has_capability y iff x is an instance of Agent and y is an instance of Agent Capability, such that x bearer of y."@en ;
                    cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology"^^xsd:anyURI ;
                    rdfs:label "has capability"@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/has_causal_factor
+cco:has_causal_factor rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/has_ending_instant
@@ -3071,6 +3062,13 @@ cco:ActOfIntelligenceGathering rdf:type owl:Class ;
                                rdfs:label "Act of Intelligence Gathering"@en .
 
 
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfLargeLanguageModelTraining
+cco:ActOfLargeLanguageModelTraining rdf:type owl:Class ;
+                                    rdfs:subClassOf cco:ActOfTraining ;
+                                    rdfs:label "Act of Large Language Model Training"@en ,
+                                               "An Act of Training in which some Large Language Model uses data to adjust its weights, nodes, parameters."@en .
+
+
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfMeasuring
 cco:ActOfMeasuring rdf:type owl:Class ;
                    rdfs:subClassOf cco:IntentionalAct ;
@@ -3125,6 +3123,13 @@ cco:ActOfTestifying rdf:type owl:Class ;
                     cco:definition_source "http://www.merriam-webster.com/dictionary/testify" ;
                     cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Mid/EventOntology"^^xsd:anyURI ;
                     rdfs:label "Act of Testifying"@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfTraining
+cco:ActOfTraining rdf:type owl:Class ;
+                  rdfs:subClassOf cco:IntentionalAct ;
+                  cco:definition "A Planned Act in which some Agent or multiple Agents prepare for or simulate Events in a controlled environment."@en ;
+                  rdfs:label "Act of Training"@en .
 
 
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/ActionPermission
@@ -3318,6 +3323,22 @@ cco:ArtifactModelName rdf:type owl:Class ;
                       rdfs:label "Artifact Model Name"@en .
 
 
+###  http://www.ontologyrepository.com/CommonCoreOntologies/CodeCompilation
+cco:CodeCompilation rdf:type owl:Class ;
+                    rdfs:subClassOf cco:ComputerProgramExecution ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty cco:has_causal_factor ;
+                                      owl:someValuesFrom cco:CodeCompiler
+                                    ] ;
+                    cco:definition "A Computer Program Execution in which some Information Bearing Entity that uses a Compiled Language is translated into some Information Bearing Entity that uses a Low-Level Programming Language."@en ;
+                    cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/CyberOntology"^^xsd:anyURI ;
+                    rdfs:label "Code Compilation"@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/CodeCompiler
+cco:CodeCompiler rdf:type owl:Class .
+
+
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/Computer
 cco:Computer rdf:type owl:Class ;
              rdfs:subClassOf cco:InformationProcessingArtifact ;
@@ -3338,7 +3359,6 @@ cco:ComputerProgramExecution rdf:type owl:Class ;
                              cco:definition "A Mechanical Process that is comprised of a sequence of simple operations performed by a Central Processing Unit or some Computer Program according to the instructions of some Algorithm."@en ;
                              cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/CyberOntology"^^xsd:anyURI ;
                              rdfs:label "Computer Program Execution"@en .
-
 
 
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/ComputingArtifactFunction
@@ -3395,6 +3415,7 @@ cco:DesignativeName rdf:type owl:Class ;
                     cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Mid/InformationEntityOntology"^^xsd:anyURI ;
                     rdfs:label "Designative Name"@en .
 
+
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/DigitalFile
 cco:DigitalFile rdf:type owl:Class ;
                 rdfs:subClassOf cco:InformationBearingArtifact ,
@@ -3405,8 +3426,6 @@ cco:DigitalFile rdf:type owl:Class ;
                 cco:definition "An Information Bearing Artifact that consist of a one-dimensional array of bytes on a Digital Storage Device, and which is designed to be easily opened, read, changed, and closed by an Information Processing Artifact."@en ;
                 cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/CyberOntology"^^xsd:anyURI ;
                 rdfs:label "Digital File"@en .
-
-
 
 
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/DigitalStorageDevice
@@ -3628,7 +3647,6 @@ cco:MechanicalProcess rdf:type owl:Class ;
                       cco:definition "A Process that is the realization of some Disposition of an Artifact"@en ;
                       cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Mid/EventOntology"^^xsd:anyURI ;
                       rdfs:label "Mechanical Process"@en .
-
 
 
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/Message
