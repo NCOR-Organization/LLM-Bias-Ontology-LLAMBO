@@ -10,7 +10,7 @@
 @base <http://www.ontologyrepository.com/bias> .
 
 <http://www.ontologyrepository.com/bias> rdf:type owl:Ontology ;
-                                          owl:versionIRI <http://www.ontologyrepository.com/2023-04-07/bias> ;
+                                          owl:versionIRI <http://www.ontologyrepository.com/2025-25-04/bias> ;
                                           <http://purl.org/dc/terms/creator> "John Beverley"@en ;
                                           rdfs:comment "This is a demo ontology created for the BENGAL TIGER project whose scope is hallucinations and biases in large-language models."@en .
 
