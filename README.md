@@ -4,7 +4,7 @@ This repository maintains the Large-Language Model Bias Ontology (LLaMBO) artifa
 
 In addition to extending BFO, LLaMBO extends directly from modules in [CCO](https://github.com/CommonCoreOntology/CommonCoreOntologies), in particular those pertaining to information and measurement. 
 
-The most current version is the "llambo.owl" file located in the root directory of this repo. 
+The most current version is the "llambo.owl" file located in the src directory of this repo. 
 
 ## Development Team
 * [John Beverley](https://www.buffalo.edu/cas/philosophy/faculty/faculty_directory/john-beverley.html)
